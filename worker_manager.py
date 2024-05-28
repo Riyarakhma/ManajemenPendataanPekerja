@@ -124,13 +124,16 @@ class Application(tk.Tk):
     def show_add_worker_popup(self):
         popup = tk.Toplevel(self)
         popup.title("Pekerja Ditambahkan")
-        popup.geometry("400x250")
+        popup.geometry("300x150")
         popup.configure(bg="#1F1F2E")
 
         label = ttk.Label(popup, text="Pekerja berhasil ditambahkan!", background="#1F1F2E", foreground="#A9A9A9", font=("Arial", 15))
-        label.pack(pady=35)
+        label.pack(pady=25)
 
-        button_ok = ttk.Button(popup, text="OK", command=popup.destroy)
+        small_button_style = ttk.Style()
+        small_button_style.configure("Small.TButton", font=("Arial", 10, "bold"), background="#3B6AA0", foreground="white")
+
+        button_ok = ttk.Button(popup, text="OK", command=popup.destroy, style="Small.TButton")
         button_ok.pack(pady=20)
 
     def show_workers(self):
